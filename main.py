@@ -40,7 +40,7 @@ num2month = {
 
 if __name__ == "__main__":
     month_name = num2month[datetime.now(tz).month]
-    year = "_" + datetime.now(tz).year
+    year = datetime.now(tz).year
     tete_rousse_img_url = get_img_url(tete_rousse_url, tete_rousse_img_id)
     gouter_img_url = get_img_url(gouter_url, gouter_img_id)
     save_img(tete_rousse_img_url, ["tete_rousse", year, month_name])
