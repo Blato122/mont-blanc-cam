@@ -2,6 +2,9 @@ import requests
 from datetime import datetime
 from bs4 import BeautifulSoup
 from pathlib import Path
+import pytz
+
+tz = pytz.timezone('CET')
 
 tete_rousse_url = "https://caf.requea.com/rqdbs?dbId=850706c76b69cf56016b7891f8383693"
 gouter_url = "https://caf.requea.com/rqdbs?dbId=850706c76b093896016b094adfd138e4"
@@ -19,7 +22,7 @@ def get_img_url(website_url, img_id):
 def save_img(img_url, subdirs=None):
     """ Saves an image given its URL. """
     img_data = requests.get(img_url).content # get bytes of an image
-    name = datetime.today().strftime('%Y-%m-%d--%H:%M:%S') # set image name to current date
+    name = datetime.now(tz).strftime('%Y-%m-%d--%H:%M:%S') # set image name to current date
 
     if subdirs is not None:
         path = "./" + "/".join(subdirs)
