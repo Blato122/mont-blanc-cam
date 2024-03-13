@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from pathlib import Path
 import pytz
 
-tz = pytz.timezone('CET')
+tz = pytz.timezone('CET') # central european timezone
 
 tete_rousse_url = "https://caf.requea.com/rqdbs?dbId=850706c76b69cf56016b7891f8383693"
 gouter_url = "https://caf.requea.com/rqdbs?dbId=850706c76b093896016b094adfd138e4"
