@@ -22,7 +22,7 @@ def get_img_url(website_url, img_id):
 def save_img(img_url, subdirs=None):
     """ Saves an image given its URL. """
     img_data = requests.get(img_url).content # get bytes of an image
-    name = datetime.now(tz).strftime('%Y-%m-%d--%H:%M:%S') # set image name to current date
+    name = datetime.now(tz).strftime('%H') # set image name to current hour
 
     if subdirs is not None:
         path = "./" + "/".join(subdirs)
