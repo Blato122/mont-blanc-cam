@@ -34,13 +34,15 @@ def save_img(img_url, subdirs=None):
         img_file.write(img_data)
 
 # because local names might differ and I don't want to have separate, say, "january" and "styczeń" directories
-num2month = {
-    1:"january", 2:"february", 3:"march", 4:"april", 5:"may", 6:"june", 7:"july", 8:"august", 9:"september", 10:"october", 11:"november", 12:"december"
-}
+# num2month = {
+#     1:"january", 2:"february", 3:"march", 4:"april", 5:"may", 6:"june", 7:"july", 8:"august", 9:"september", 10:"october", 11:"november", 12:"december"
+# }
+# I don't want that actually :((
 
 if __name__ == "__main__":
+    # https://docs.python.org/3/library/datetime.html#datetime.datetime
     year = str(datetime.now(tz).year)
-    month = num2month[datetime.now(tz).month]
+    month = str(datetime.now(tz).month)
     day = str(datetime.now(tz).day)
 
     tete_rousse_img_url = get_img_url(tete_rousse_url, tete_rousse_img_id)
