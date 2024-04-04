@@ -2,7 +2,7 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '3 6-20 * * *' # Runs at 18 minutes past the hour, between 06:00 and 20:59 of UTC time (07:00 and 21:59 of CET time).
+    - cron: '3 5-20 * * *' # Runs at 3 minutes past the hour, between 05:00 and 20:59 of UTC time (06:00 and 21:59 (21) of CET time and 07:00 and 22:59 (22) of CET time).
 
 jobs:
   build:
