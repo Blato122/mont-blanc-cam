@@ -45,11 +45,18 @@ if __name__ == "__main__":
     month = str(datetime.now(tz).month)
     day = str(datetime.now(tz).day)
 
-    tete_rousse_img_url = get_img_url(tete_rousse_url, tete_rousse_img_id)
-    gouter_img_url = get_img_url(gouter_url, gouter_img_id)
+    img_urls = {}
+    img_urls["tete_rousse"] = get_img_url(tete_rousse_url, tete_rousse_img_id)
+    img_urls["gouter"] = get_img_url(gouter_url, gouter_img_id)
 
-    save_img(tete_rousse_img_url, ["tete_rousse", year, month, day])
-    save_img(gouter_img_url, ["gouter", year, month, day])
+    for name, url in img_urls.items():
+        try:
+            save_img(url, [name, year, month, day])
+        except Exception: # in case the url is invalid (because, for example, the camera is broken)
+            pass
+
+    # save_img(tete_rousse_img_url, ["tete_rousse", year, month, day])
+    # save_img(gouter_img_url, ["gouter", year, month, day])
 
 # useful:
 # https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior
