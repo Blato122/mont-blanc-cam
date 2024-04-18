@@ -8,6 +8,8 @@ tz = pytz.timezone('CET') # central european timezone
 
 tete_rousse_url = "https://caf.requea.com/rqdbs?dbId=850706c76b69cf56016b7891f8383693"
 gouter_url = "https://caf.requea.com/rqdbs?dbId=850706c76b093896016b094adfd138e4"
+
+gouter_old_img_id = "rqdshb3cd0a3b775dbe6c01775dbfaeea3b47"
 gouter_img_id = "rqdshb3cd0a3b775dbe6c01775dbfaee73b42"
 tete_rousse_img_id = "rqdshb3cd0a3b775dbe6c01775dbfacce3ae8"
 
@@ -48,6 +50,7 @@ if __name__ == "__main__":
     img_urls = {}
     img_urls["tete_rousse"] = get_img_url(tete_rousse_url, tete_rousse_img_id)
     img_urls["gouter"] = get_img_url(gouter_url, gouter_img_id)
+    img_urls["gouter_old"] = get_img_url(gouter_url, gouter_old_img_id)
 
     for name, url in img_urls.items():
         try:
